@@ -6,7 +6,7 @@ class Publication:
         self.status = status
 
     def __str__(self):
-        authors_str = ', '.join(self.authors)
+        authors_str = ', '.join([f"'{author}'" for author in self.authors])
         return f"{self.title} - [{authors_str}] ({self.year})"
 
 class Book(Publication):
@@ -42,6 +42,9 @@ class User:
             print(f"The {publication.title} was returned by {self.name}.")
         else:
             print(f"The {publication.title} was not borrowed by {self.name}.")
+    
+    def __str__(self):
+        return '[' + ', '.join(str(pub) for pub in self.pubs) + ']'
 
 class Professor(User):
     def __init__(self, name, user_id, department, employee_id, max_pubs=2):
