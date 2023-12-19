@@ -14,7 +14,7 @@ class Hand:
     def __init__(self):
         self.cards = []
 
-    def draw(self, deck, num_cards=1):
+    def draw(self, deck =[], num_cards=1):
         drawn_cards = deck.deal(num_cards)
         self.cards.extend(drawn_cards)
         return drawn_cards
@@ -32,18 +32,21 @@ class Hand:
 
 # Define the Deck class
 class Deck:
-    def __init__(self, suits, values):
-       self.suits = suits
-       self.values = values
+    def __init__(self, suits =  [], values = []):
+
+     #  for suit in suits:
+     #     for value in values:
+     #         self.cards.append(Card(suit,value))
+
+        self.cards = [Card(suit, value) for suit in suits for value in values]
 
     def deal(self, num_cards):
-       dealt_cards = random.sample(self.cards, num_cards)
-       for card in dealt_cards:
-        self.cards.remove(card)
-       return dealt_cards
+        dealt_cards = random.sample(self.cards, num_cards)
+        self.cards = [card for card in self.cards if card not in dealt_cards]
+        return dealt_cards
 
     def draw(self):
-        return self.deal(1)[0]
+        return self.cards.pop(0)
 
     def shuffle(self):
         random.shuffle(self.cards)
@@ -61,3 +64,15 @@ class EnglishDeck(Deck):
         suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
         values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
         super().__init__(suits, values)
+
+# Example usage:
+spanish_deck = SpanishDeck()
+english_deck = EnglishDeck()
+player_hand = Hand()
+
+player_hand.draw(spanish_deck, 3)
+player_hand.discard(player_hand.cards[0])
+player_hand.receive_cards(english_deck.deal(2))
+spanish_deck.shuffle()
+card_drawn = spanish_deck.draw()
+print(card_drawn)
