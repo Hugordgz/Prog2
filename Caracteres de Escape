@@ -1,0 +1,26 @@
+#\n: Nueva Línea o Salto de Línea
+#Crea una nueva línea en el texto.
+#Ejemplo: "Hola\nMundo" resultará en dos líneas:
+#Hola
+#Mundo
+
+#\t: Tabulación Horizontal
+#Añade una tabulación (espaciado horizontal) en el texto.
+#Ejemplo: "Hola\tMundo" podría verse así:
+#Hola    Mundo
+
+#\r: Retorno de Carro
+#Mueve el cursor al inicio de la línea actual, no a una nueva línea. Puede sobrescribir el texto si se escriben más caracteres después.
+#Ejemplo: "Hola\rMundo" podría resultar en "Mundo" dependiendo del contexto.
+
+#\\: Barra Invertida
+#Permite incluir una barra invertida literal en una cadena.
+#Ejemplo: "Ruta del archivo: C:\\Windows\\System32".
+
+#\': Comilla Simple
+#Permite incluir una comilla simple en una cadena que está delimitada por comillas simples.
+#Ejemplo: 'It\'s a beautiful day' se interpreta como It's a beautiful day.
+
+#\": Comilla Doble
+#Permite incluir una comilla doble en una cadena que está delimitada por comillas dobles.
+#Ejemplo: "Ella dijo: \"Hola\"", se interpreta como Ella dijo: "Hola".

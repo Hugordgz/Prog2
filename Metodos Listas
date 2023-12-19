@@ -1,0 +1,50 @@
+#append(elemento): Añade un elemento al final de la lista.
+mi_lista = [1, 2, 3]
+mi_lista.append(4)
+# Resultado: mi_lista = [1, 2, 3, 4]
+
+#extend(iterable): Extiende la lista añadiendo todos los elementos del iterable al final.
+mi_lista = [1, 2, 3]
+otra_lista = [4, 5]
+mi_lista.extend(otra_lista)
+# Resultado: mi_lista = [1, 2, 3, 4, 5]
+
+#insert(indice, elemento): Inserta un elemento en la posición especificada.
+mi_lista = [1, 2, 4]
+mi_lista.insert(2, 3)
+# Resultado: mi_lista = [1, 2, 3, 4]
+
+#remove(elemento): Elimina la primera ocurrencia del elemento.
+mi_lista = [1, 2, 3, 2, 4]
+mi_lista.remove(2)
+# Resultado: mi_lista = [1, 3, 2, 4]
+
+#pop([indice]): Elimina y retorna el elemento en la posición dada. Sin índice, elimina y retorna el último elemento.
+mi_lista = [1, 2, 3, 4]
+elemento = mi_lista.pop()
+# Resultado: elemento = 4, mi_lista = [1, 2, 3]
+
+#clear(): Elimina todos los elementos de la lista.
+mi_lista = [1, 2, 3, 4]
+mi_lista.clear()
+# Resultado: mi_lista = []
+
+#index(elemento[, start[, end]]): Devuelve el índice del primer elemento con el valor especificado.
+mi_lista = [1, 2, 3, 4]
+indice = mi_lista.index(3)
+# Resultado: indice = 2
+
+#count(elemento): Cuenta el número de ocurrencias de un elemento en la lista.
+mi_lista = [1, 2, 3, 2, 4]
+conteo = mi_lista.count(2)
+# Resultado: conteo = 2
+
+#sort([key=..., reverse=...]): Ordena los elementos de la lista (los argumentos son opcionales).
+mi_lista = [3, 1, 4, 1, 5]
+mi_lista.sort()
+# Resultado: mi_lista = [1, 1, 3, 4, 5]
+
+#reverse(): Invierte el orden de los elementos en la lista.
+mi_lista = [1, 2, 3, 4]
+mi_lista.reverse()
+# Resultado: mi_lista = [4, 3, 2, 1]
