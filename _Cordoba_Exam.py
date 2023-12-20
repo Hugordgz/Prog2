@@ -36,7 +36,7 @@ class User(ABC):
         else:
             raise ValueError("El UserID debe ser una cadena de 9 dígitos")
         self.pubs = []
-    
+
     def lend_pub(self, publication):
         publication.change_status("borrowed")
         self.pubs.append(publication)
