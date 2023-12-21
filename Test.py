@@ -14,12 +14,20 @@ class Book(Publication):
         super().__init__(title, authors, year)
         self.isbn = isbn
         self.pages = pages
+    
+    def __str__(self):
+        base_str = super().__str__()
+        return f"{base_str}"
 
 class Journal(Publication):
     def __init__(self, title, authors, year, edition_number, periodicity):
         super().__init__(title, authors, year)
         self.edition_number = edition_number
         self.periodicity = periodicity
+    
+    def __str__(self):
+        base_str = super().__str__()
+        return f"{base_str}"
 
 class User:
     def __init__(self, name, user_id):
